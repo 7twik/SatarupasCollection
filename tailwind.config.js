@@ -2,10 +2,10 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
     darkMode: ["class"],
-    content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+	content: [
+		"./pages/**/*.{js,ts,jsx,tsx}",
+		"./components/**/*.{js,ts,jsx,tsx}",
+		"./layouts/**/*.{js,ts,jsx,tsx}",   ],
   theme: {
   	extend: {
   		screens: {
