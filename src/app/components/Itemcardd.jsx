@@ -19,7 +19,9 @@ export default function ItemCardd({ id, category, title, price, img, desc }) {
         <p className=" text-sm mb-4 line-clamp-2 text-gray-300">{desc}</p>
         <div className="flex justify-between items-center">
           <span className="text-xl font-bold  text-gray-300">${price}</span>
-          <Button variant="outline">View Details</Button>
+          <Button variant="outline" onClick={()=>{
+            window.location.href="/product/"+id;
+          }}>View Details</Button>
         </div>
       </div>
     </div>
