@@ -1,3 +1,4 @@
+"use client";
 import React, { use, useEffect, useState } from 'react'
 import { useStateAuth } from '../data/Context'
 import Image from 'next/image';
@@ -21,7 +22,7 @@ const Cart = ({userData}) => {
         }
         await handleSubmit();
         alert("Checkout Done : "+dd);
-        localStorage.setItem("carttupa", JSON.stringify([]));
+        window.localStorage.setItem("carttupa", JSON.stringify([]));
         setData([]);
         setLoading(false);
     }

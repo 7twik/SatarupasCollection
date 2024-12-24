@@ -10,9 +10,9 @@ import React, {
   const StateContext = createContext();
   
   export const StateProvider = ({ children }) => {
-    const [data, setData] = useState(localStorage.getItem("carttupa") ? JSON.parse(localStorage.getItem("carttupa")) : []);
+    const [data, setData] = useState(window.localStorage.getItem("carttupa") ? JSON.parse(window.localStorage.getItem("carttupa")) : []);
     useEffect(() => {
-        localStorage.setItem("carttupa", JSON.stringify(data));
+        window.localStorage.setItem("carttupa", JSON.stringify(data));
         }, [data]);
     return (
       <StateContext.Provider
