@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { useEffect } from 'react';
-import { Card, CardContent } from "@/components/ui/card";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { Card, CardContent } from "../../components/ui/card";
+import { Avatar, AvatarImage, AvatarFallback } from "../../components/ui/avatar";
 import { Phone,User } from "lucide-react";
 
 import { useUser } from '@auth0/nextjs-auth0/client';

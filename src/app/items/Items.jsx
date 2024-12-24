@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import ItemCard from '../components/ItemCard'
-import { Button } from '@/components/ui/button'
+import { Button } from '../../components/ui/button'
 import Data from '../data/ItemData.js'
 
 

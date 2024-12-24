@@ -2,9 +2,9 @@
 
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Button } from "@/components/ui/button"
+import { Input } from "../../components/ui/input"
+import { Textarea } from "../../components/ui/textarea"
+import { Button } from "../../components/ui/button"
 import {
   Form,
   FormControl,
@@ -13,8 +13,8 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form"
-import { useToast } from "@/hooks/use-toast"
+} from "../../components/ui/form"
+import { useToast } from "../../hooks/use-toast"
 
 
 

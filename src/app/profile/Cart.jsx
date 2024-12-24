@@ -1,8 +1,8 @@
 import React, { use, useEffect, useState } from 'react'
 import { useStateAuth } from '../data/Context'
 import Image from 'next/image';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
+import { Button } from '../../components/ui/button';
+import { Input } from '../../components/ui/input';
 import Loading from '../components/Loading';
 const Cart = ({userData}) => {
     const {data,setData}=useStateAuth();

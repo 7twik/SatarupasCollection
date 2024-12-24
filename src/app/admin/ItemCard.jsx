@@ -1,13 +1,13 @@
 import Image from 'next/image'
-import { Card, CardContent, CardFooter } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Button } from '@/components/ui/button'
+import { Card, CardContent, CardFooter } from "../../components/ui/card"
+import { Badge } from "../../components/ui/badge"
+import { Button } from '../../components/ui/button'
 import Loading from '../components/Loading'
 
 
 
 export function ItemCard({ title, category, img, description, price }) {
-    const [Loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(false)
     const deleteItem = async () => {
         setLoading(true)
         await fetch('/api/item', {
@@ -23,7 +23,7 @@ export function ItemCard({ title, category, img, description, price }) {
     }
   return (
     <Card className="overflow-hidden">
-        {Loading && <Loading />}
+        {loading && <Loading />}
       <div className="relative h-48 w-full">
         <Image
           src={img}

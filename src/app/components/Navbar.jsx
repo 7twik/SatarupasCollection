@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import { useUser } from '@auth0/nextjs-auth0/client';
 import { useStateAuth } from '../data/Context'
-import { Badge } from "@/components/ui/badge"
+import { Badge } from "../../components/ui/badge"
 const navItems = [
   { name: 'Home', href: '/' },
   { name: 'About', href: '/about' },

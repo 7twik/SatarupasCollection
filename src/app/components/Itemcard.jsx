@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { Button } from '@/components/ui/button'
+import { Button } from '../../components/ui/button'
 import { useStateAuth } from '../data/Context.jsx'
 import { useEffect } from 'react';
 

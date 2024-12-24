@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle } from "../../components/ui/card"
 import OrderCard from "./OrderCard"
 import { useUser } from '@auth0/nextjs-auth0/client'
 import { useEffect, useState } from "react";

@@ -1,8 +1,8 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import { OrderCard } from './OrderCard';
 import Loading from '../components/Loading';
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
+import { Input } from '../../components/ui/input';
+import { Button } from '../../components/ui/button';
 
 const AllOrder = () => {
     const [loading, setLoading] = useState(true);

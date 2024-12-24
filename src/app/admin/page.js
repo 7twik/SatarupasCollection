@@ -6,7 +6,7 @@ import Loading from '../components/Loading';
 import AllOrder from './AllOrder';
 import AllItem from './AllItem';
 import ItemForm from './ItemForm';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../components/ui/tabs"
 export default function ProfilePage() {
     const [loading, setLoading] = useState(true);
     const { user, error, isLoading } = useUser();
