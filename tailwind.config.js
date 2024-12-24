@@ -5,6 +5,11 @@ export default {
 	content: [
 		'./src/**/*.{js,jsx}',
 		"./src/pages/**/*.{js,jsx}",
+		"./src/**/*.{js,ts,jsx,tsx}",
+		// using ./ dir
+		"./app/**/*.{js,ts,jsx,tsx}",
+		"./components/**/*.{js,ts,jsx,tsx}",
+		"./src/app/**/*.{js,ts,jsx,tsx}",
 	  ],
   theme: {
   	extend: {
