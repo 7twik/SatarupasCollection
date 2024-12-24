@@ -16,6 +16,7 @@ export default function RootLayout({ children }) {
       <UserProvider>
         <StateProvider>
         <body className={`antialiased`}>
+          
           <Navbar />
           {children}
           <Footer />
