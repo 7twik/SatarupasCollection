@@ -10,7 +10,13 @@ import React, {
   const StateContext = createContext();
   
   export const StateProvider = ({ children }) => {
-    const [data, setData] = useState(window.localStorage.getItem("carttupa") ? JSON.parse(window.localStorage.getItem("carttupa")) : []);
+    const [data, setData] = useState([]);
+    useEffect(() => {
+        const cart = window.localStorage.getItem("carttupa");
+        if (cart) {
+          setData(JSON.parse(cart));
+        }
+      }, []);
     useEffect(() => {
         window.localStorage.setItem("carttupa", JSON.stringify(data));
         }, [data]);
