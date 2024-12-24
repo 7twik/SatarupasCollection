@@ -36,9 +36,13 @@ export default function Navbar() {
         (user)?
         <>
           <NavItem href="/profile">Profile <Badge variant="outline">{data.length}</Badge></NavItem>
-          <NavItem href="/api/auth/logout">Logout</NavItem>
+          {/*  eslint-disable-next-line @next/next/no-html-link-for-pages */}
+          <a href="/api/auth/logout">Logout</a>
         </>:
-        <NavItem href="/api/auth/login">Login</NavItem>}
+        <>
+        {/*  eslint-disable-next-line @next/next/no-html-link-for-pages */}
+        <a href="/api/auth/login">Login</a>
+        </>}
           </div>
           <div className="md:hidden">
             <button
@@ -100,9 +104,14 @@ function MobileMenu({ isOpen, setIsOpen, items }) {
         (user)?
         <>
           <Link href="/profile" className="text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-white hover:bg-opacity-20 transition duration-300">Profile <Badge variant="outline">{data.length}</Badge> </Link>
-          <Link href="/api/auth/logout" className="text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-white hover:bg-opacity-20 transition duration-300">Logout</Link>
+          {/*  eslint-disable-next-line @next/next/no-html-link-for-pages */}
+          <a href="/api/auth/logout" className="text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-white hover:bg-opacity-20 transition duration-300">Logout</a>
         </>:
-        <Link href="/api/auth/login" className="text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-white hover:bg-opacity-20 transition duration-300">Login</Link>}
+        <>
+        {/*  eslint-disable-next-line @next/next/no-html-link-for-pages */}
+        <a href="/api/auth/login" className="text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-white hover:bg-opacity-20 transition duration-300">Login</a>
+        </>}
+          
       </div>
     </motion.div>
   )
