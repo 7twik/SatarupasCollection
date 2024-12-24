@@ -18,8 +18,10 @@ export default function ItemCard({ id, show, category, title, price, img, desc }
         return;
       }
     }
-    
-    setData([...data, item]);
+    const temp=[...data, item];
+    setData(temp);
+    localStorage.setItem("carttupa", JSON.stringify(temp));
+
     alert("Item Added to Cart");
   }
   return (

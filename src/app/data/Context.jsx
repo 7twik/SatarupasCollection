@@ -17,9 +17,7 @@ import React, {
           setData(JSON.parse(cart));
         }
       }, []);
-    useEffect(() => {
-        window.localStorage.setItem("carttupa", JSON.stringify(data));
-        }, [data]);
+    
     return (
       <StateContext.Provider
         value={{

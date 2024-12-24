@@ -5,7 +5,7 @@ const Loading = () => {
   return (
                 <Backdrop
                         sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
-                        open={open}
+                        open={true}
                     >
                          <div className="pyramid-loader1">
                             <div className="wrapper1">

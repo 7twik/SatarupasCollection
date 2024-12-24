@@ -57,11 +57,13 @@ const Cart = ({userData}) => {
                             const temp=[...data];
                             temp[index].quantity=value;
                             setData(temp);
+                            localStorage.setItem("carttupa", JSON.stringify(temp));
                         }} />
                         <Button onClick={()=>{
                             const temp=[...data];
                             temp.splice(index,1);
                             setData(temp);
+                            localStorage.setItem("carttupa", JSON.stringify(temp));
                         }}>Delete</Button>
                     </div>
                 </div>
