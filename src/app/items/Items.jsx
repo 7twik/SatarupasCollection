@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import ItemCard from '../components/ItemCard'
+import ItemCard from '../components/Itemcard'
 import { Button } from '../../components/ui/button'
 import Data from '../data/ItemData.js'
 

@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import ItemCard from './ItemCard'
+import ItemCard from './Itemcard'
 import { Button } from '../../components/ui/button'
 import Data from '../data/ItemData.js'
 import { useUser } from '@auth0/nextjs-auth0/client'
