@@ -1,5 +1,5 @@
 "use client";
-
+import "./app.css"
 import { Suspense } from "react";
 import Feature from "./components/Feature";
 import Hero from "./components/Hero";
