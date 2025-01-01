@@ -117,8 +117,7 @@ function MobileMenu({ log,isOpen, setIsOpen, items }) {
         {
         (log==true)?
         <>
-          <Link href="/profile" className="text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-white hover:bg-opacity-20 transition duration-300">Profile <Badge variant="outline">{data.length}</Badge> </Link>
-          {/*  eslint-disable-next-line @next/next/no-html-link-for-pages */}
+          <Link href="/profile" className="text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-white hover:bg-opacity-20 transition duration-300">Profile & Cart </Link>
           <LogoutLink>Logout</LogoutLink>
         </>:
         <>
