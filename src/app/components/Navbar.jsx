@@ -70,7 +70,9 @@ export default function Navbar() {
         </div>
       </div>
       {isOpen && (
-        <MobileMenu isOpen={isOpen} setIsOpen={setIsOpen} items={navItems} />
+        (user!==undefined&&user!==null&&user.email!="")?
+        <MobileMenu log={true} isOpen={isOpen} setIsOpen={setIsOpen} items={navItems} />:
+        <MobileMenu log={false} isOpen={isOpen} setIsOpen={setIsOpen} items={navItems} />
       )}
     </nav>
   )
@@ -90,17 +92,8 @@ function NavItem({ href, children }) {
   )
 }
 
-function MobileMenu({ isOpen, setIsOpen, items }) {
-  const [user, setUser] = useState(null);
-  async function kind(){
-    const usr=await fetch('/api/kinde').then((res) => res.json());
-    console.log(usr);
-    const us=await usr.user;
-    setUser(us);
-  }
-  useEffect(() => {
-    kind();
-  }, []);
+function MobileMenu({ log,isOpen, setIsOpen, items }) {
+ 
   
   return (
     <motion.div
@@ -122,7 +115,7 @@ function MobileMenu({ isOpen, setIsOpen, items }) {
           </Link>
         ))}
         {
-        (user!==undefined&&user!==null&&user.email!="")?
+        (log==true)?
         <>
           <Link href="/profile" className="text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-white hover:bg-opacity-20 transition duration-300">Profile <Badge variant="outline">{data.length}</Badge> </Link>
           {/*  eslint-disable-next-line @next/next/no-html-link-for-pages */}

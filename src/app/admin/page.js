@@ -12,8 +12,10 @@ export default function ProfilePage() {
       const user=await fetch('/api/kinde').then((res) => res.json());
       console.log(user);
       const us=await user.user;
+      console.log(us.email);
         if(us!==null&&us.email==""&&us.email!=="07twik@gmail.com"&&us.email!=="satarupawork18@gmail.com"&&us.email!=="satarupadas106@gmail.com"&&us.email!=="dassatarupa237@gmail.com"&&us.email!=="tupadas18@gmail.com")
         {
+          console.log("Not Admin");
           window.location.href = "/";
         }
         setLoading(false);
