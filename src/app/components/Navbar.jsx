@@ -8,7 +8,6 @@ import { useStateAuth } from '../data/Context'
 import { Badge } from "../../components/ui/badge"
 import {RegisterLink, LoginLink} from "@kinde-oss/kinde-auth-nextjs/components";
 import {LogoutLink} from "@kinde-oss/kinde-auth-nextjs/components";
-import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
 const navItems = [
   { name: 'Home', href: '/' },
   { name: 'About', href: '/about' },
@@ -18,7 +17,16 @@ const navItems = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
-  const {user, getUser} = useKindeBrowserClient();
+  const [user, setUser] = useState(null);
+  async function kind(){
+    const usr=await fetch('/api/kinde').then((res) => res.json());
+    console.log(usr);
+    const us=await usr.user;
+    setUser(us);
+  }
+  useEffect(() => {
+    kind();
+  }, []);
   
   const {data}=useStateAuth();
 
@@ -83,7 +91,16 @@ function NavItem({ href, children }) {
 }
 
 function MobileMenu({ isOpen, setIsOpen, items }) {
-  const {user, getUser} = useKindeBrowserClient();
+  const [user, setUser] = useState(null);
+  async function kind(){
+    const usr=await fetch('/api/kinde').then((res) => res.json());
+    console.log(usr);
+    const us=await usr.user;
+    setUser(us);
+  }
+  useEffect(() => {
+    kind();
+  }, []);
   
   return (
     <motion.div
