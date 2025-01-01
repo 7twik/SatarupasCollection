@@ -1,3 +1,4 @@
+"use client";
 import React, { useCallback, useEffect, useState } from 'react'
 import { OrderCard } from './OrderCard';
 import Loading from '../components/Loading';

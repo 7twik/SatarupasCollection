@@ -1,7 +1,5 @@
-'use client'
-
-import { useState, useEffect, Suspense } from 'react';
-import { useUser } from '@auth0/nextjs-auth0/client';
+"use client";
+import { useState, useEffect } from 'react';
 import Loading from '../components/Loading';
 import AllOrder from './AllOrder';
 import AllItem from './AllItem';
@@ -9,23 +7,22 @@ import ItemForm from './ItemForm';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../components/ui/tabs"
 export default function ProfilePage() {
     const [loading, setLoading] = useState(true);
-    const { user, error, isLoading } = useUser();
-
-  useEffect(() => {
-
-        if(!user && !isLoading)
+    
+    async function kind(){
+      const user=await fetch('/api/kinde').then((res) => res.json());
+      console.log(user);
+      const us=await user.user;
+        if(us!==null&&us.email==""&&us.email!=="07twik@gmail.com")
         {
             window.location.replace('/');
         }
-        if(user)
-        {
-            if(user.email!=="07twik@gmail.com")
-            {
-                window.location.replace('/');
-            }
-            setLoading(false);
-        }
-    }, [isLoading]);
+        setLoading(false);
+      }
+
+  useEffect(() => {
+
+       kind();
+    }, []);
 
   
   return (
@@ -50,8 +47,6 @@ export default function ProfilePage() {
           </TabsContent>
         </Tabs>
         </div>
-    {/* <AddItem />
-    <AllItem /> */}
     
     </>
   );

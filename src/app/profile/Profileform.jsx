@@ -1,20 +1,17 @@
+"use client";
 import { useState } from 'react';
 import { Button } from "../../components/ui/button"
 import { Input } from "../../components/ui/input"
 import { Label } from "../../components/ui/label"
-import { useUser } from '@auth0/nextjs-auth0/client';
 
 
  function ProfileForm({ onSubmit }) {
   const [username, setUsername] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
-    const { user, error, isLoading } = useUser();
     
   const handleSubmit = async(e) => {
-    if(!isLoading&& !user)
-    {
-        window.location.replace('/');
-    }
+    const {getUser} = getKindeServerSession();
+    const user = await getUser();
     var email=user.email;
     e.preventDefault();
     await fetch('/api/user', {

@@ -1,23 +1,17 @@
-import { Card, CardContent, CardHeader, CardTitle } from "../../components/ui/card"
+"use client";
 import OrderCard from "./OrderCard"
-import { useUser } from '@auth0/nextjs-auth0/client'
 import { useEffect, useState } from "react";
 import Loading from "../components/Loading";
 
-
 export default function PastOrders() {
   const [loading, setLoading] = useState(true)
-  const { user,error,isLoading } = useUser()
   const [data, setData] = useState([])
   useEffect(() => {
-    if (user) {
      getPastOrders()
-      
-    }
-  }, [user,isLoading])
+  }, [])
   async function getPastOrders() {
-
-    const email=user.email;
+    const user = await fetch('/api/kinde').then((res) => res.json());
+    const email=user.user.email;
     const res = await fetch(`/api/past?email=${email}`).then((res) => res.json());
     const ret=await res.data;
     console.log(ret);

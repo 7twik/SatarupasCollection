@@ -1,32 +1,28 @@
-'use client'
-
-import { useState, useEffect, Suspense } from 'react';
+"use client";
+import { useState,useEffect} from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../components/ui/tabs"
 import Profileform from './Profileform';
 import Profiledisplay from './Profiledisplay';
 import PastOrders from './PastOrders';
 import Cart from './Cart';
-import { useUser } from '@auth0/nextjs-auth0/client';
 import { StateProvider } from '../data/Context';
 import Loading from '../components/Loading';
 export default function ProfilePage() {
   const [userData, setUserData] = useState(null);
   const [loading, setLoading] = useState(true);
-    const { user, error, isLoading } = useUser();
 
   const [count, setCount] = useState(0);
   useEffect(() => {
 
-        if(!user && !isLoading)
-        {
-            window.location.replace('/');
-        }
-    async function loadUserData() {
-        if(isLoading)
-        {
-            return;
-        }
-        const em=await user.email;
+        
+   async function loadUserData() {
+      const user=await fetch('/api/kinde').then((res) => res.json());
+
+      if(user===null)
+      {
+        return;
+      }
+        const em=await user.user.email;
       const data = await fetch('/api/user?email='+em).then((res) => res.json());
       console.log(data);
       if(data.data.length>0)
@@ -35,13 +31,13 @@ export default function ProfilePage() {
       setLoading(false);
     }
     loadUserData();
-  }, [isLoading,count]);
+  }, []);
 
   const handleProfileSubmit=()=>{
     setCount(count+1);
   }
 
-  if (isLoading||loading) {
+  if (loading) {
     return <Loading />;
   }
 

@@ -1,12 +1,14 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
-import { useUser } from '@auth0/nextjs-auth0/client';
 import { useStateAuth } from '../data/Context'
 import { Badge } from "../../components/ui/badge"
+import {RegisterLink, LoginLink} from "@kinde-oss/kinde-auth-nextjs/components";
+import {LogoutLink} from "@kinde-oss/kinde-auth-nextjs/components";
+import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
 const navItems = [
   { name: 'Home', href: '/' },
   { name: 'About', href: '/about' },
@@ -16,7 +18,8 @@ const navItems = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
-  const { user, error, isLoading } = useUser();
+  const {user, getUser} = useKindeBrowserClient();
+  
   const {data}=useStateAuth();
 
   return (
@@ -32,16 +35,16 @@ export default function Navbar() {
                 {item.name}
               </NavItem>
             ))}
-            {isLoading? <div>Loading...</div> : 
-        (user)?
+            {
+        (user!==undefined&&user!==null&&user.email!="")?
         <>
           <NavItem href="/profile">Profile <Badge variant="outline">{data.length}</Badge></NavItem>
           {/*  eslint-disable-next-line @next/next/no-html-link-for-pages */}
-          <a href="/api/auth/logout">Logout</a>
+          <LogoutLink>Logout</LogoutLink>
         </>:
         <>
         {/*  eslint-disable-next-line @next/next/no-html-link-for-pages */}
-        <a href="/api/auth/login">Login</a>
+        <LoginLink>Sign in</LoginLink>
         </>}
           </div>
           <div className="md:hidden">
@@ -80,7 +83,8 @@ function NavItem({ href, children }) {
 }
 
 function MobileMenu({ isOpen, setIsOpen, items }) {
-  const { user, error, isLoading } = useUser();
+  const {user, getUser} = useKindeBrowserClient();
+  
   return (
     <motion.div
       className="md:hidden"
@@ -100,16 +104,16 @@ function MobileMenu({ isOpen, setIsOpen, items }) {
             {item.name}
           </Link>
         ))}
-        {isLoading? <div>Loading...</div> : 
-        (user)?
+        {
+        (user!==undefined&&user!==null&&user.email!="")?
         <>
           <Link href="/profile" className="text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-white hover:bg-opacity-20 transition duration-300">Profile <Badge variant="outline">{data.length}</Badge> </Link>
           {/*  eslint-disable-next-line @next/next/no-html-link-for-pages */}
-          <a href="/api/auth/logout" className="text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-white hover:bg-opacity-20 transition duration-300">Logout</a>
+          <LogoutLink>Logout</LogoutLink>
         </>:
         <>
         {/*  eslint-disable-next-line @next/next/no-html-link-for-pages */}
-        <a href="/api/auth/login" className="text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-white hover:bg-opacity-20 transition duration-300">Login</a>
+        <LoginLink>Login</LoginLink>
         </>}
           
       </div>

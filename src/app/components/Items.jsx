@@ -1,24 +1,23 @@
-'use client'
+"use client";
 
 import { useEffect, useState } from 'react'
 import ItemCard from './Itemcard'
 import { Button } from '../../components/ui/button'
 import Data from '../data/ItemData.js'
-import { useUser } from '@auth0/nextjs-auth0/client'
 
 const categories = ["all", ...new Set(Data.map(item => item.category))]
 
 export default function Items() {
   const [filter, setFilter] = useState("all")
   const [show, setShow] = useState(null)
-  const { user, error, isLoading } = useUser();
   async function loadUserData() {
     console.log("loading user data IS RUNNING")
-    if(isLoading)
-    {
-        return;
-    }
-    const em=user.email;
+    const user=await fetch('/api/kinde').then((res) => res.json());
+    console.log(user);
+    var em="";
+    if(user!==null)
+      em=await user.user.email;
+    console.log("EMAIL IN ITEMS.JSX",em);
     const data = await fetch('/api/user?email='+em).then((res) => res.json());
     console.log(data);
     if(data.data.length>0)
@@ -26,14 +25,8 @@ export default function Items() {
 
   }
   useEffect(() => {
-    console.log(user)
-    console.log(user!==undefined&&user!==null)
-    if(user!==undefined&&user!==null){
-
       loadUserData();
-    }
-    console.log(show);
-  }, [user,isLoading]);
+  }, []);
   const filteredItems = filter === "all" 
     ? Data 
     : Data.filter(item => item.category === filter)

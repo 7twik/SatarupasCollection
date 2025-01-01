@@ -1,27 +1,45 @@
-import Image from 'next/image';
-import { useEffect } from 'react';
+"use client";
+import { useEffect,useState } from 'react';
 import { Card, CardContent } from "../../components/ui/card";
 import { Avatar, AvatarImage, AvatarFallback } from "../../components/ui/avatar";
 import { Phone,User } from "lucide-react";
+import Loading from '../components/Loading';
 
-import { useUser } from '@auth0/nextjs-auth0/client';
 function Profiledisplay({ userData }) {
-  const { user, error, isLoading } = useUser();
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+  async function loadUserData() {
+    const user=await fetch('/api/kinde').then((res) => res.json());
+    if(user.user!==null)
+    { 
+        setUser(user.user);
+        setLoading(false);
+    }
+  }
   useEffect(() => {
     console.log(userData[0].Username,userData[0].Phone);
-    console.log(user)
-  }, [userData,isLoading]);
+    loadUserData();
+  }, []);
   return (
     <Card className="w-full max-w-md mx-auto">
+      {loading && <Loading />}
     <CardContent className="p-6">
       <div className="flex flex-col md:flex-row items-center gap-6">
         <div className="flex-shrink-0">
           <Avatar className="w-24 h-24 border-2 border-primary/10">
+          {user!==null?
             <AvatarImage 
               src={user.picture} 
               alt="Profile Picture"
               className="object-cover"
             />
+            :
+            <AvatarImage 
+              src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQABqQIdskCD9BK0I81EbVfV9tTz320XvJ35A&s"} 
+              alt="Profile Picture"
+              className="object-cover"
+            />
+          }
             <AvatarFallback>
               {userData[0].Username.split(' ').map(n => n[0]).join('')}
             </AvatarFallback>

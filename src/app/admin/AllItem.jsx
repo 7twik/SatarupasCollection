@@ -1,3 +1,4 @@
+"use client";
 import { useEffect, useState } from "react";
 import { ItemCard } from "./ItemCard";
 import Loading from "../components/Loading";

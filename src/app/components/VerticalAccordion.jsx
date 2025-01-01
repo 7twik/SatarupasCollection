@@ -1,3 +1,4 @@
+"use client";
 import { FiBarChart, FiBell, FiDollarSign, FiPlay } from "react-icons/fi";
 import { AnimatePresence, motion } from "framer-motion";
 import { useWindowSize } from "./useWindowSize";

@@ -1,9 +1,13 @@
+
 import "./globals.css";
 import Navbar from "./components/Navbar";
+import Head from "next/head";
 
-import { UserProvider } from '@auth0/nextjs-auth0/client';
+
 import { StateProvider } from "./data/Context";
 import { Footer } from "./components/Footer";
+
+import {AuthProvider} from './AuthProvider';
 
 export const metadata = {
   title: "Create Next App",
@@ -13,7 +17,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <UserProvider>
+      <Head>
+        <title>{metadata.title}</title>
+        <meta name="description" content={metadata.description} />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <AuthProvider>
         <StateProvider>
         <body className={`antialiased`}>
           
@@ -22,7 +31,7 @@ export default function RootLayout({ children }) {
           <Footer />
         </body>
         </StateProvider>
-      </UserProvider>
+      </AuthProvider>
     </html>
   );
 }

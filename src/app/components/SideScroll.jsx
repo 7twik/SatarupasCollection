@@ -1,3 +1,4 @@
+"use client";
 import { motion, useTransform, useScroll } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import Data from '../data/ItemData.js'
