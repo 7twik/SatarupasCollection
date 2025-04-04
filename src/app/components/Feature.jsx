@@ -1,10 +1,14 @@
 import Image from "next/image";
 
 export default function Feature() {
-    const src="https://c8.alamy.com/comp/2R8F9NW/colorful-rangoli-pattern-design-for-diwali-isolated-on-a-white-background-vector-illustration-2R8F9NW.jpg"
-    const src2="https://static.vecteezy.com/system/resources/previews/023/822/996/non_2x/colorful-rangoli-design-isolated-on-a-white-background-free-vector.jpg"
-    const src3="https://png.pngtree.com/png-vector/20241014/ourmid/pngtree-beautiful-rangoli-designs-on-a-white-background-png-image_14077342.png"
-    const src4="https://img.freepik.com/premium-vector/colorful-rangoli-design-isolated-white-background_8130-2546.jpg"
+    // const src="https://c8.alamy.com/comp/2R8F9NW/colorful-rangoli-pattern-design-for-diwali-isolated-on-a-white-background-vector-illustration-2R8F9NW.jpg"
+    // const src2="https://static.vecteezy.com/system/resources/previews/023/822/996/non_2x/colorful-rangoli-design-isolated-on-a-white-background-free-vector.jpg"
+    // const src3="https://png.pngtree.com/png-vector/20241014/ourmid/pngtree-beautiful-rangoli-designs-on-a-white-background-png-image_14077342.png"
+    // const src4="https://img.freepik.com/premium-vector/colorful-rangoli-design-isolated-white-background_8130-2546.jpg"
+    const src="/p6.jpg"
+    const src2="/p3.jpg"
+    const src3="/p10.jpg"
+    const src4="/p5.jpg"
     return (
       <section className="back3 relative bg-gradient-to-br from-navy-900 via-purple-900 to-blue-900 text-white py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="max-w-7xl mx-auto">
@@ -31,7 +35,7 @@ export default function Feature() {
             <div className="relative p-8 rounded-2xl  boxgr flex md:flex-row flex-col">
                 <div className="md:w-[20vw] w-[80vw] pb-5 md:pb-0">
                     <h3 className="text-2xl font-bold mb-4 text-white">
-                        Handcrafted Pottery
+                        Handcrafted Art
                     </h3>
                     <p className="text-gray-300">
                         Explore our collection of hand-thrown ceramics, each piece uniquely shaped 

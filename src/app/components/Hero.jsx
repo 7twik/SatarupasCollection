@@ -12,6 +12,16 @@ export default function Hero() {
         <div className="pt-16 pb-20 md:pt-24 md:pb-28 lg:pt-32 lg:pb-36">
           <div className="text-center lg:text-left lg:flex lg:items-center lg:justify-between">
             <div className="lg:w-1/2">
+            
+              <div className="w-full flex justify-center lg:justify-start mb-6">
+                <Image
+                  className="h-28 w-auto sm:h-28 lg:h-48"
+                  src="/logo1.jpg"
+                  alt="Logo"
+                  width={100}
+                  height={100}
+                />
+              </div>
               <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
                 <span className="block">Handcrafted</span>
                 <span className="block text-purple-600">with Love</span>

@@ -13,7 +13,7 @@ export default function Product({ title, description, img, category, price }) {
             <Badge className="mb-2">{category}</Badge>
             <CardTitle className="text-2xl md:text-3xl">{title}</CardTitle>
           </div>
-          <div className="text-2xl font-bold">${price}</div>
+          <div className="text-2xl font-bold">₹{price}</div>
         </div>
       </CardHeader>
       <CardContent className="space-y-4">
@@ -30,14 +30,8 @@ export default function Product({ title, description, img, category, price }) {
       </CardContent>
       <CardFooter className="flex flex-col space-y-2">
         <Button className="w-full">Add to Cart</Button>
-        <div className="flex justify-between w-full">
-          <Button variant="outline" className="w-[48%]" disabled>
-            Add Review (Coming Soon)
-          </Button>
-          <Button variant="outline" className="w-[48%]" disabled>
-            View Reviews (Coming Soon)
-          </Button>
-        </div>
+        
+          
       </CardFooter>
     </Card>
   )

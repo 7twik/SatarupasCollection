@@ -13,7 +13,7 @@ export default function Home() {
       <SideScroll />
       <Feature />
       <Items />
-      <VerticalAccordion /> 
+      {/* <VerticalAccordion />  */}
     </div>
   )
 }

@@ -7,7 +7,7 @@ export function Footer() {
       <div className="container mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="mb-8 md:mb-0">
-            <h2 className="text-2xl font-bold mb-4">Company Name</h2>
+            <h2 className="text-2xl font-bold mb-4">Satarupa's Collection</h2>
             <p className="text-sm text-purple-100">
               Empowering innovation through cutting-edge technology solutions.
             </p>
@@ -24,10 +24,18 @@ export function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Services</h3>
             <ul className="space-y-2">
-              <li><Link href="/services/web-development" className="hover:text-purple-200 transition-colors">Web Development</Link></li>
-              <li><Link href="/services/mobile-apps" className="hover:text-purple-200 transition-colors">Mobile Apps</Link></li>
-              <li><Link href="/services/cloud-solutions" className="hover:text-purple-200 transition-colors">Cloud Solutions</Link></li>
-              <li><Link href="/services/consulting" className="hover:text-purple-200 transition-colors">IT Consulting</Link></li>
+              <li><Link href="/" className="hover:text-purple-200 transition-colors">
+                Handcraft
+              </Link></li>
+              <li><Link href="/" className="hover:text-purple-200 transition-colors">
+                Custom Design
+              </Link></li>
+              <li><Link href="/" className="hover:text-purple-200 transition-colors">
+                Textile
+              </Link></li>
+              <li><Link href="/" className="hover:text-purple-200 transition-colors">
+                Accessories
+              </Link></li>
             </ul>
           </div>
           <div>
@@ -70,7 +78,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-12 pt-8 border-t border-purple-400 text-center text-sm">
-          <p>© {new Date().getFullYear()} Company Name. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Satarupa's Collection. All rights reserved.</p>
           <div className="mt-2 space-x-4">
             <Link href="/privacy-policy" className="hover:text-purple-200 transition-colors">Privacy Policy</Link>
             <Link href="/terms-of-service" className="hover:text-purple-200 transition-colors">Terms of Service</Link>

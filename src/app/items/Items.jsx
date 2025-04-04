@@ -37,7 +37,7 @@ export default function Items() {
             <div className="md:w-[90vw] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             
               {filteredItems.map((item, index) => (
-                <ItemCard key={index} img={item.img} category={item.category} title={item.title} price={item.price} desc={item.desc} />
+                <ItemCard key={index} id={item._id} img={item.img} category={item.category} title={item.title} price={item.price} desc={item.desc} />
               ))}
               
             </div>

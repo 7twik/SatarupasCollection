@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Dancing+Script:wght@400..700&family=Style+Script&display=swap');
 /* body{
   margin:0;
   padding:0;
@@ -92,11 +92,7 @@ h1,h2,h3,h4,h5,h6{
   --color-subtext: #FF8A71;
   --color-dark: #521bde;
 }
-@media screen and (max-width: 768px){
-  body{
-    background: radial-gradient(circle at 0% 1%, #fd955d 0, #f3f8ff 8%);
-  }
-}
+
 .wallet-adapter-dropdown-list-active{
   z-index: 1000 !important;
 }
@@ -209,7 +205,9 @@ h1,h2,h3,h4,h5,h6{
     transform: rotateY(360deg);
   }
 }
-
+.navtext{
+  font-family: "Dancing Script", cursive;
+}
 .pyramid-loader1 .wrapper1 .side1 {
   width: 70px;
   height: 70px;

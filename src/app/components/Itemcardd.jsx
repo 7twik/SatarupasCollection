@@ -18,7 +18,7 @@ export default function ItemCardd({ id, category, title, price, img, desc }) {
         <h3 className="text-lg font-bold mt-1 mb-2 text-white">{title}</h3>
         <p className=" text-sm mb-4 line-clamp-2 text-gray-300">{desc}</p>
         <div className="flex justify-between items-center">
-          <span className="text-xl font-bold  text-gray-300">${price}</span>
+          <span className="text-xl font-bold  text-gray-300">₹{price}</span>
           <Button variant="outline" onClick={()=>{
             window.location.href="/product/"+id;
           }}>View Details</Button>

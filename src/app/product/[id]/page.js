@@ -1,16 +1,21 @@
-import React from 'react'
+"use client"
+import React, { useEffect, useState } from 'react'
 import Product from './Product'
 
-const page = ({params}) => {
+const Page = ({params}) => {
+  const [data,setData]=useState([])
+  const getData=async()=>{
+    const response = await fetch('/api/item');
+    const dat = await response.json();
+    const specific=dat.data.filter((item)=>item._id==params.id)[0];
+    setData(specific);
+  }
+  useEffect(() => {
+    getData();
+  }
+  , []);
     const {id} = params
-    const data={
-        id:5,
-        category:"painting",
-        title:"The Last Supper",
-        price:3000,
-        img:"https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/1920px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg",
-        description:"The Last Supper is a late 15th-century mural painting by Italian artist Leonardo da Vinci housed by the refectory of the Convent of Santa Maria delle Grazie in Milan, Italy. It is one of the Western world's most recognizable paintings."
-    }
+    
   return (
     <div>
         <Product {...data} />
@@ -18,4 +23,4 @@ const page = ({params}) => {
   )
 }
 
-export default page
+export default Page

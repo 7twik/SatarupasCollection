@@ -34,8 +34,8 @@ export default function Navbar() {
     <nav className="bg-gradient-to-r from-purple-900 via-purple-500 to-purple-300 p-4">
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center justify-between">
-          <Link href="/" className="text-white text-2xl font-bold">
-            CoolBrand
+          <Link href="/" className="text-white text-2xl font-bold navtext">
+            Satarupa's Collection
           </Link>
           <div className="hidden md:flex space-x-8">
             {navItems.map((item) => (

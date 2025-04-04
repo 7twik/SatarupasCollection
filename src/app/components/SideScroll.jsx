@@ -15,9 +15,13 @@ const SideScroll = () => {
 
 const HorizontalScrollCarousel = () => {
     const [Items, setItems] = useState(Data);
+    async function loaddata() {
+      const items = await fetch('/api/item').then((res) => res.json());
+      console.log(items);
+      setItems(items.data.slice(0,6));
+    }
     useEffect(() => {
-        //randomly select 6 items from the given items and set it to the state
-        setItems(Data.sort(() => Math.random() - Math.random()).slice(0, 6));
+        loaddata();
     }, []);
     
   const targetRef = useRef(null);
@@ -32,7 +36,7 @@ const HorizontalScrollCarousel = () => {
       <div className="sticky top-0 flex h-screen items-center overflow-hidden">
         <motion.div style={{ x }} className="flex gap-4">
           {Items.map((item,k) => {
-            return <ItemCardd img={item.img} category={item.category} title={item.title} price={item.price} desc={item.desc}  key={k} />;
+            return <ItemCardd img={item.img} id={item._id} category={item.category} title={item.title} price={item.price} desc={item.desc}  key={k} />;
           })}
         </motion.div>
       </div>
@@ -64,41 +68,3 @@ const Card = ({ card }) => {
 };
 
 export default SideScroll;
-
-const cards = [
-  {
-    url: "/imgs/abstract/1.jpg",
-    title: "Title 1",
-    id: 1,
-  },
-  {
-    url: "/imgs/abstract/2.jpg",
-    title: "Title 2",
-    id: 2,
-  },
-  {
-    url: "/imgs/abstract/3.jpg",
-    title: "Title 3",
-    id: 3,
-  },
-  {
-    url: "/imgs/abstract/4.jpg",
-    title: "Title 4",
-    id: 4,
-  },
-  {
-    url: "/imgs/abstract/5.jpg",
-    title: "Title 5",
-    id: 5,
-  },
-  {
-    url: "/imgs/abstract/6.jpg",
-    title: "Title 6",
-    id: 6,
-  },
-  {
-    url: "/imgs/abstract/7.jpg",
-    title: "Title 7",
-    id: 7,
-  },
-];

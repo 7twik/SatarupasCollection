@@ -5,9 +5,8 @@ import ItemCard from './Itemcard'
 import { Button } from '../../components/ui/button'
 import Data from '../data/ItemData.js'
 
-const categories = ["all", ...new Set(Data.map(item => item.category))]
-
 export default function Items() {
+  const [categories,setcategories] = useState(["all"])
   const [filter, setFilter] = useState("all")
   const [show, setShow] = useState(null)
   async function loadUserData() {
@@ -24,12 +23,21 @@ export default function Items() {
       setShow(data.data);
 
   }
+  const [totalItems, setTotalItems] = useState([])
+  async function loadItems() {
+    const items = await fetch('/api/item').then((res) => res.json());
+    console.log(items);
+    setTotalItems(items.data);
+    const uniqueCategories = [...new Set(items.data.map(item => item.category))];
+    setcategories(["all", ...uniqueCategories]);
+  }
   useEffect(() => {
+    loadItems();
       loadUserData();
   }, []);
   const filteredItems = filter === "all" 
-    ? Data 
-    : Data.filter(item => item.category === filter)
+    ? totalItems
+    : totalItems.filter(item => item.category === filter)
 
   return (
     <section className="py-16 bg-gray-50">
@@ -42,9 +50,9 @@ export default function Items() {
               key={category}
               onClick={() => setFilter(category)}
               variant={filter === category ? "default" : "outline"}
-              className="capitalize"
+              className="capitalize mb-5"
             >
-              {category}
+              {category.substring(0, 10)}
             </Button>
           ))}
         </div>
@@ -52,11 +60,11 @@ export default function Items() {
           <div className='flex justify-center'>
             <div className="md:w-[90vw] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {/* ONLY SHOW FIRST 6 ITEMS REST STAY HIDDEN */}
-              {filteredItems.slice(0, 6).map((item, index) => (
+              {filteredItems.map((item, index) => (
                   show !== null ? (
                     <ItemCard 
                       key={index}
-                      id={item.id}
+                      id={item.img}
                       show={true}
                       img={item.img}
                       category={item.category}
