@@ -35,7 +35,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center justify-between">
           <Link href="/" className="text-white text-2xl font-bold navtext">
-            Satarupa's Collection
+            Satarupa&apos;s Collection
           </Link>
           <div className="hidden md:flex space-x-8">
             {navItems.map((item) => (

@@ -78,7 +78,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-12 pt-8 border-t border-purple-400 text-center text-sm">
-          <p>© {new Date().getFullYear()} Satarupa's Collection. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Satarupa &apos; s Collection. All rights reserved.</p>
           <div className="mt-2 space-x-4">
             <Link href="/privacy-policy" className="hover:text-purple-200 transition-colors">Privacy Policy</Link>
             <Link href="/terms-of-service" className="hover:text-purple-200 transition-colors">Terms of Service</Link>
