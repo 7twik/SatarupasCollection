@@ -15,7 +15,7 @@ export default function Items() {
     const user=await fetch('/api/kinde').then((res) => res.json());
     console.log(user);
     var em="";
-    if(user!==null)
+    if(user!==null&&user.user!==null)
       em=await user.user.email;
     console.log("EMAIL IN ITEMS.JSX",em);
     const data = await fetch('/api/user?email='+em).then((res) => res.json());
