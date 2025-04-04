@@ -7,7 +7,7 @@ export function Footer() {
       <div className="container mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="mb-8 md:mb-0">
-            <h2 className="text-2xl font-bold mb-4">Satarupa's Collection</h2>
+            <h2 className="text-2xl font-bold mb-4">Satarupa&apos;s Collection</h2>
             <p className="text-sm text-purple-100">
               Empowering innovation through cutting-edge technology solutions.
             </p>
