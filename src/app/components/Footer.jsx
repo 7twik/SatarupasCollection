@@ -41,7 +41,7 @@ export function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Connect With Us</h3>
             <div className="flex space-x-4">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-purple-200 transition-colors">
+              <a href="https://www.facebook.com/share/1AbdvGUaCT/" target="_blank" rel="noopener noreferrer" className="hover:text-purple-200 transition-colors">
                 <span className="sr-only">Facebook</span>
                 <Facebook size={24} />
               </a>
@@ -49,7 +49,7 @@ export function Footer() {
                 <span className="sr-only">Twitter</span>
                 <Twitter size={24} />
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-purple-200 transition-colors">
+              <a href="https://www.instagram.com/satarupa.me/profilecard/?igsh=YXh5empycjJzbGxi" target="_blank" rel="noopener noreferrer" className="hover:text-purple-200 transition-colors">
                 <span className="sr-only">Instagram</span>
                 <Instagram size={24} />
               </a>

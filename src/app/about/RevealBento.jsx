@@ -63,7 +63,7 @@ const Block = ({ className, ...rest }) => {
 const HeaderBlock = () => (
   <Block className="col-span-12 row-span-2 md:col-span-6">
     <Image
-      src="https://api.dicebear.com/8.x/lorelei-neutral/svg?seed=John"
+      src="./logo1.jpg"
       alt="avatar"
       className="mb-4 size-14 rounded-full"
         width={100}
@@ -71,13 +71,14 @@ const HeaderBlock = () => (
         
     />
     <h1 className="mb-12 text-4xl font-medium leading-tight">
-      Hi, I&apos;m Tom.{" "}
+      Hi, I&apos;m Satarupa.{" "}
       <span className="text-zinc-400">
-        I build cool websites like this one.
+        I am a beautiful designer. I craft beautiful crafts, textiles, and art.
+
       </span>
     </h1>
     <a
-      href="#"
+      href="/contact"
       className="flex items-center gap-1 text-red-300 hover:underline"
     >
       Contact me <FiArrowRight />
@@ -95,7 +96,7 @@ const SocialsBlock = () => (
       className="col-span-6 bg-red-500 md:col-span-3"
     >
       <a
-        href="#"
+        href="https://www.facebook.com/share/1AbdvGUaCT/"
         className="grid h-full place-content-center text-3xl text-white"
       >
         <FaFacebook />
@@ -109,7 +110,7 @@ const SocialsBlock = () => (
       className="col-span-6 bg-green-600 md:col-span-3"
     >
       <a
-        href="#"
+        href="https://www.instagram.com/satarupa.me/profilecard/?igsh=YXh5empycjJzbGxi"
         className="grid h-full place-content-center text-3xl text-white"
       >
         <FaInstagram />
@@ -137,7 +138,7 @@ const SocialsBlock = () => (
       className="col-span-6 bg-blue-500 md:col-span-3"
     >
       <a
-        href="#"
+        href="mailto:satarupawork18@gmail.com"
         className="grid h-full place-content-center text-3xl text-white"
       >
         <SiGmail />
@@ -149,11 +150,12 @@ const SocialsBlock = () => (
 const AboutBlock = () => (
   <Block className="col-span-12 text-3xl leading-snug">
     <p>
-      My passion is building cool stuff.{" "}
+      My passion is building artistic material.{" "}
       <span className="text-zinc-400">
-        I build primarily with React, Tailwind CSS, and Framer Motion. I love
-        this stack so much that I even built a website about it. I&apos;ve made over
-        a hundred videos on the subject across YouTube and TikTok.
+        I build beautiful crafts, textiles, and art. I am a designer and I love to
+        create beautiful things.
+        <br />
+
       </span>
     </p>
   </Block>
