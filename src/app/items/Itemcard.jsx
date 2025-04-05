@@ -3,11 +3,11 @@ import Image from 'next/image'
 import { Button } from '../../components/ui/button'
 import { useStateAuth } from '../data/Context.jsx'
 import { useEffect } from 'react';
-import { LoginLink } from '@kinde-oss/kinde-auth-nextjs';
 
 export default function ItemCard({ id, show, category, title, price, img, desc }) {
   const { data, setData } = useStateAuth();
   useEffect(() => {
+    
     console.log("ITEM",show);
   }, [show]);
   function additem() {
@@ -45,8 +45,6 @@ export default function ItemCard({ id, show, category, title, price, img, desc }
           <Button variant="outline" onClick={()=>{
             window.location.href="/product/"+id;
           }}>View Details</Button>
-          {!show &&
-          <LoginLink className="kindecart">Add to Cart</LoginLink>}
           {show &&
           <Button variant="default" onClick={additem}>Add to Cart</Button>}
         </div>

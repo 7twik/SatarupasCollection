@@ -52,7 +52,7 @@ export default function Navbar() {
         </>:
         <>
         {/*  eslint-disable-next-line @next/next/no-html-link-for-pages */}
-        <LoginLink>Sign in</LoginLink>
+        <LoginLink className='kindebutton'>Sign in</LoginLink>
         </>}
           </div>
           <div className="md:hidden">
@@ -118,11 +118,11 @@ function MobileMenu({ log,isOpen, setIsOpen, items }) {
         (log==true)?
         <>
           <Link href="/profile" className="text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-white hover:bg-opacity-20 transition duration-300">Profile & Cart </Link>
-          <LogoutLink>Logout</LogoutLink>
+          <LogoutLink  className='kindebutton'>Logout</LogoutLink>
         </>:
         <>
         {/*  eslint-disable-next-line @next/next/no-html-link-for-pages */}
-        <LoginLink>Login</LoginLink>
+        <LoginLink  className='kindebutton'>Login</LoginLink>
         </>}
           
       </div>

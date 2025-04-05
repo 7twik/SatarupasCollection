@@ -3,28 +3,26 @@ const Data=[{
     category:"painting",
     title:"The Starry Night",
     price:1800,
-    img:"https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/1920px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg",
-    desc:"The Starry Night is an oil on canvas painting by Dutch Post-Impressionist painter Vincent van Gogh. Painted in June 1889, it depicts the view from the east-facing window of his asylum room at Saint-Rémy-de-Provence, just before sunrise, with the addition of an imaginary village."
+    img:"/p1.jpg"
 },{
     id:2,
     category:"painting",
     title:"The Scream",
     price:2000,
-    img:"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/The_Scream.jpg/1920px-The_Scream.jpg",
-    desc:"The Scream is the popular name given to a composition created by Norwegian Expressionist artist Edvard Munch in 1893. The original German title given by Munch to his work was Der Schrei der Natur, and the Norwegian title is Skrik."
+    img:"/p1.jpg"
 },{
     id:3,
     category:"painting",
     title:"Mona Lisa",
     price:2500,
-    img:"https://img.freepik.com/premium-vector/colorful-rangoli-design-isolated-white-background_8130-2546.jpg",
+    img:"/p1.jpg",
     desc:"The Mona Lisa is a half-length portrait painting by Italian artist Leonardo da Vinci. Considered an archetypal masterpiece of the Italian Renaissance, it has been described as the most famous, most visited, most sung about, most parodied work of art in the world."
 },{
     id:4,
     category:"painting",
     title:"The Persistence of Memory",
     price:2200,
-    img:"https://img.freepik.com/premium-vector/colorful-rangoli-design-isolated-white-background_8130-2546.jpg",
+    img:"/p1.jpg",
     desc:"The Persistence of Memory is a 1931 painting by artist Salvador Dalí and one of the most recognizable works of Surrealism. First shown at the Julien Levy Gallery in 1932, since 1934 the painting has been in the collection of the Museum of Modern Art (MoMA) in New York City."
 },
 {
@@ -32,7 +30,7 @@ const Data=[{
     category:"painting",
     title:"The Last Supper",
     price:3000,
-    img:"https://img.freepik.com/premium-vector/colorful-rangoli-design-isolated-white-background_8130-2546.jpg",
+    img:"/p1.jpg",
     desc:"The Last Supper is a late 15th-century mural painting by Italian artist Leonardo da Vinci housed by the refectory of the Convent of Santa Maria delle Grazie in Milan, Italy. It is one of the Western world's most recognizable paintings."
 },
 {
@@ -40,7 +38,7 @@ const Data=[{
     category:"painting",
     title:"The Birth of Venus",
     price:2500,
-    img:"https://img.freepik.com/premium-vector/colorful-rangoli-design-isolated-white-background_8130-2546.jpg",
+    img:"/p1.jpg",
     desc:"The Birth of Venus is a painting by the Italian artist Sandro Botticelli, probably made in the mid 1480s. It depicts the goddess Venus arriving at the shore after her birth, when she had emerged from the sea fully-grown."
 },
 {

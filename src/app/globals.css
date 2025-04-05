@@ -116,6 +116,40 @@ h1,h2,h3,h4,h5,h6{
 ::-webkit-scrollbar-thumb:hover {
   background: #d6890c;
 }
+.kindebutton{
+  background: linear-gradient(103.22deg,#8119f1 -13.86%,#fd955d 99.55%);
+  color: #fff;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  margin-top: -5px;
+}
+.kindebutton:hover{
+  background: linear-gradient(103.22deg,#fd955d -13.86%,#8119f1 99.55%);
+  color: #fff;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+.kindecart{
+  background-color: #042c54;
+  color: #fff;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+}
+.kindecart:hover{
+  background-color: #5a4d62;
+  color: #fff;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  transform: scale(0.95);
+}
 @layer base {
   :root {
     --background:0 0% 100%;
